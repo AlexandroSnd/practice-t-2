@@ -10,7 +10,7 @@ export async function generateQRCode(text: string, size: number = 8): Promise<st
     // Генерация QR-кода в формате ASCII
     const qrCode = await QRCode.toString(text, {
       type: 'terminal',
-      width: size,
+      version: size,
       errorCorrectionLevel: 'L',
     });
     console.log(qrCode);

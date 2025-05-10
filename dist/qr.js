@@ -8,12 +8,11 @@ async function generateQRCode(text, size = 8) {
         console.error('Ошибка: Укажите текст или ссылку.');
         process.exit(1);
     }
-    console.log(size);
     try {
         // Генерация QR-кода в формате ASCII
         const qrCode = await QRCode.toString(text, {
             type: 'terminal',
-            width: size,
+            version: size,
             errorCorrectionLevel: 'L',
         });
         console.log(qrCode);
